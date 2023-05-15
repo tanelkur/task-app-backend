@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(
   cors({
-    origin: ["http://localhost:3000/", "https://tk-task-app.onrender.com"],
+    origin: ["http://localhost:3000/", "https://tk-task-app.onrender.com/"],
   })
 );
 app.use("/api/tasks", taskRoutes);
@@ -29,7 +29,7 @@ mongoose
   .then(() => {
     console.log("mongoDB connected");
 
-    app.listen(PORT, "0.0.0.0", () => {
+    app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
     });
   })
